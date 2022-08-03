@@ -26,9 +26,9 @@ public class DogListAction implements Action {
 		}
 		
 		DogListService dogListService = new DogListService();
-		ArrayList<Dog> dogList = dogListService.getDogList(); 
+		ArrayList<Dog> dogList = dogListService.getDogList();
 		request.setAttribute("dogList", dogList);
-		request.setAttribute("todayImageList", todayImageList); // 오늘 본 개 목록을 배열 형태로 세션 저장한다
+		request.setAttribute("todayImageList", todayImageList);
 		ActionForward forward = new ActionForward("dogList.jsp", false);
 		
 		return forward;

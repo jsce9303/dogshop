@@ -26,20 +26,20 @@ public class DogDAO {
 		
 		return boardDAO;
 	}
-	//데이터베이스에 저장된 모든 개 상품 정보를 반환하는 메소드를 정의한 부분
+	
 	public ArrayList<Dog> selectDogList() {
 		PreparedStatement pstmt = null;
 		ResultSet rs= null;
 		ArrayList<Dog> dogList = null;
 		
 		try {
-			pstmt = con.prepareStatement("SELECT * FROM dog"); // 테이블 이름은 간단하게 dog로 지었다.
+			pstmt = con.prepareStatement("SELECT * FROM dog");
 			rs = pstmt.executeQuery();
 			
-			if(rs.next()){ //값이 없을 때 까지 계속 반복한다 next()
+			if(rs.next()){
 				dogList = new ArrayList<Dog>();
 				
-				do {	// do while은 우선 do를 먼저 실행하고 이후 while의 조건에 따라 반복한다.
+				do {
 					dogList.add(new Dog(
 							rs.getInt("id")
 							,rs.getString("kind")
@@ -69,7 +69,7 @@ public class DogDAO {
 		ResultSet rs = null;
 		Dog dog = null;
 		
-		try {	//데이터 베이스에 저장된 모든 개 정보 중 id값에 따라 반환하는 부분이다.
+		try {
 			pstmt = con.prepareStatement("SELECT * FROM dog WHERE id=?");
 			pstmt.setInt(1, id);
 			rs = pstmt.executeQuery();
@@ -96,7 +96,7 @@ public class DogDAO {
 		
 		return dog;
 	}
-	// 읽은횟수 1을 증가키는 부분
+	
 	public int updateReadCount(int id) {
 		PreparedStatement pstmt = null;
 		int updateCount = 0;
@@ -115,7 +115,7 @@ public class DogDAO {
 		
 		return updateCount;
 	}
-	// 새로운 개 등록 SQL구문을 적용시키는 부분
+	
 	public int insertDog(Dog dog) {
 		PreparedStatement pstmt = null;
 		int insertCount = 0;

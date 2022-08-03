@@ -68,7 +68,6 @@ table {
 }
 </style>
 <script>
-	//장바구니 항목 삭제 요청시 삭제할 항목을 체크박스를 체크해서 선택함
 	function checkAll(theForm){
 		if(theForm.remove.length == undefined){
 			theForm.remove.checked = theForm.allCheck.checked;
@@ -78,11 +77,11 @@ table {
 			}
 		}
 	}
-	// 현재 수량이 1이 아닐때만 수량감소 요청 기능하도록 함
+	
 	function checkQty(kind,qty){
 		if(qty != 1){
 			location.href="dogCartQtyDown.dog?kind="+ kind;
-		} //kind는 DB에 입력된 개의 품종을 의미하는 문자열이다.
+		}
 	}
 </script>
 </head>
