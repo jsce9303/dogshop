@@ -46,6 +46,20 @@
 		border: none;
 	}
 </style>
+<script type="text/javascript">
+// 함수 : 자주사용하고 코드가 긴 내용을 묶어서 정의
+// 함수호출 : 함수이름을 부르면서 사용 
+
+function deleteAllCookies() {
+ var c = document.cookie.split("; ");
+ for (i in c)
+  document.cookie =/^[^=]+/.exec(c[i])[0]+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
+//모든 쿠키 삭제 스크립트
+ window.location.reload();
+ //페이지 새로고침
+}
+
+</script>
 </head>
 <body>
 <section id = "listForm">
@@ -77,6 +91,7 @@
 <c:if test="${todayImageList !=null }">
 <div id ="todayImageList">
 	<br><br><h2>오늘 본 개 상품 목록</h2>
+	<input type="button" value="오늘 본 상품 초기화" onclick="deleteAllCookies()">
 <table>
 	<tr>
 		<c:forEach var="todayImage" items="${todayImageList}" varStatus="status">
