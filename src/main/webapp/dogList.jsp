@@ -54,7 +54,7 @@ function deleteAllCookies() {
  var c = document.cookie.split("; ");
  for (i in c)
   document.cookie =/^[^=]+/.exec(c[i])[0]+"=;expires=Thu, 01 Jan 1970 00:00:00 GMT";
-//모든 쿠키 삭제 스크립트
+//모든 쿠키 삭제 스크립트 : 만료시간을 과거로 설정하여 바로 쿠키유효시간을 없애버림
  window.location.reload();
  //페이지 새로고침
 }
