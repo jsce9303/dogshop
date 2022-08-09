@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<a href="dogList.dog">개상품목록보기11</a>
+<a href="dogList.dog">분양 반려견 목록보기</a>
 </body>
 </html>
