@@ -226,7 +226,7 @@ table {
 	</c:if>
 	<c:if test="${cartList == null }">
       <section class="div_empty">
-      개정보가 없습니다.
+      반려견 정보가 없습니다.
       </section>
 	</c:if>
    <nav id="commandList">

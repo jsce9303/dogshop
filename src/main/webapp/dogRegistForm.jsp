@@ -36,7 +36,7 @@
 <body>
 <section id = "registForm">
    <header>
-      <h2>개정보등록</h2>
+      <h2>반려견 정보등록</h2>
    </header>
       <form action="dogRegist.dog" method="post" name = "writeForm" enctype="multipart/form-data">
       
@@ -109,9 +109,9 @@
    </tr>
    <tr>
       <td colspan="2" id = "commandCell"> 
-         <input type = "submit" value = "개상품등록"/>      
+         <input type = "submit" value = "분양 반려견 등록"/>      
          <input type = "reset" value = "다시작성"/>      
-         <input type = "button" value = "개상품목록보기" onClick="window.location.href='dogList.dog'"/>      
+         <input type = "button" value = "반려견 분양 목록보기" onClick="window.location.href='dogList.dog'"/>      
       </td>
    </tr>   
    </table>

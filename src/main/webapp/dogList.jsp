@@ -64,7 +64,7 @@ function deleteAllCookies() {
 <body>
 <section id = "listForm">
 <c:if test="${dogList != null}">
-<h2>개 상품 목록  <a href="dogRegistForm.dog">개상품등록</a></h2>
+<h2>분양 반려견 목록  <a href="dogRegistForm.dog">분양 반려견 등록하기</a></h2>
 <table>
 	<tr>
 		<c:forEach var = "dog" items="${dogList }" varStatus="status">
@@ -72,7 +72,7 @@ function deleteAllCookies() {
 			<a href="dogView.dog?id=${dog.id}">
 			<img src="images/${dog.image}" id="productImage"/>
 			</a>
-			상품명:${dog.kind}<br>
+			품종명:${dog.kind}<br>
 			가격:${dog.price}<br>
 		</td>
 		<c:if test="${((status.index+1) mod 4)==0 }">
@@ -85,13 +85,13 @@ function deleteAllCookies() {
 </c:if>
 <c:if test="${dogList==null }">
 	<div class="div_empty">
-	개상품이 없습니다. 분양불가
+	등록 반려견이 없습니다. 분양불가
 	</div>
 </c:if>
 <c:if test="${todayImageList !=null }">
 <div id ="todayImageList">
-	<br><br><h2>오늘 본 개 상품 목록</h2>
-	<input type="button" value="오늘 본 상품 초기화" onclick="deleteAllCookies()">
+	<br><br><h2>오늘 본 반려견 목록</h2>
+	<input type="button" value="오늘 본 반려견 목록 초기화" onclick="deleteAllCookies()">
 <table>
 	<tr>
 		<c:forEach var="todayImage" items="${todayImageList}" varStatus="status">
